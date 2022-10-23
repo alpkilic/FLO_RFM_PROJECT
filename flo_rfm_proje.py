@@ -115,6 +115,6 @@ SEGMENT_D = df[(df["interested_in_categories_12"]).str.contains("ERKEK|COCUK")]
 
 second_case = pd.merge(SEGMENT_C, SEGMENT_D[["interested_in_categories_12", "master_id"]], on=["master_id"])
 
-second_case = second_case.drop(second_case.loc[:, 'secency':'interested_in_categories_12'].columns, axis=1)
+second_case = second_case.drop(second_case.loc[:, 'recency':'interested_in_categories_12'].columns, axis=1)
 
 second_case.to_csv("case_2_customers.csv", index=False)
